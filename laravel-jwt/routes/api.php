@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AuthController;
 
 
 
@@ -29,4 +30,8 @@ Route::delete('/products/{id}', [ProductController::class, 'delete']);
 
 Route::get('/orders', [OrderController::class, 'getAll']);
 Route::get('/orders/{id}', [OrderController::class, 'select']);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth:api')->post('/logout', [AuthController::class, 'logout']);
 
