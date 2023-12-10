@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 // routes/api.php
 
-use App\Http\Controllers\ProductController;
 
 Route::get('/products', [ProductController::class, 'getAll']);
 Route::get('/products/{id}', [ProductController::class, 'select']);
 Route::post('/products', [ProductController::class, 'insert']);
 Route::put('/products/{id}', [ProductController::class, 'update']);
 Route::delete('/products/{id}', [ProductController::class, 'delete']);
+
+Route::get('/orders', [OrderController::class, 'getAll']);
+Route::get('/orders/{id}', [OrderController::class, 'select']);
 
