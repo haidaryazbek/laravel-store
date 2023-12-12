@@ -32,7 +32,7 @@ Route::delete('/products/{id}', [ProductController::class, 'delete']);
 Route::get('/orders', [OrderController::class, 'getAll']);
 Route::get('/orders/{id}', [OrderController::class, 'select']);
 
-Route::post('/register', [AuthController::class, 'register']);
+Route::get('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:api')->post('/logout', [AuthController::class, 'logout']);
 
